@@ -1,5 +1,7 @@
 package ProcessMgmt;
 
+import Models.Merchandise;
+
 public interface CashRegister {
 
     float getAmountToPay();
@@ -13,5 +15,7 @@ public interface CashRegister {
     void setAmountTaxToPay(float amount_to_pay);
 
     void addAmountTaxToPay(float amount_to_pay_to_add);
+
+    Float calculateMerchandisePriceWithTax(Merchandise merchandise);
 
 }

@@ -1,0 +1,10 @@
+id,name,category,unitPackage,unitPrice,imported,stockQty
+1,book,book,generic,12.49,false,29
+2,music CD,others,generic,14.99,false,3
+3,chocolate bar,food,bar,0.85,false,11
+4,imported box of chocolates,food,box,10.0,false,3
+5,imported box of chocolates,food,box,11.25,true,4
+6,imported bottle of perfume,others,bottle,47.5,true,4
+7,imported bottle of perfume,others,bottle,27.99,true,4
+8,bottle of perfume,others,bottle,18.99,false,3
+9,packet of headache pills,medicine,packet,9.75,false,7

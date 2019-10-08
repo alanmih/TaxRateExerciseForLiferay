@@ -1,47 +1,51 @@
 package Models;
 
-import ProcessMgmt.CashRegisterImpl;
-import ProcessMgmt.OrderImpl;
+import java.util.Map;
 
 public class Receipt {
 
-    private OrderImpl order;
-    //TODO Implement @Autowire
+    private Map<Merchandise, Float> orderOfSelectedItems;
 
-    private CashRegisterImpl cashRegister;
-    //TODO Implement @Autowire
+    private float final_amount_to_pay;
+
+    private float final_amount_tax_to_pay;
 
     public Receipt() {
     }
 
-    public Receipt(OrderImpl order, CashRegisterImpl cashRegister) {
-        this.order = order;
-        this.cashRegister = cashRegister;
+    public Map<Merchandise, Float> getOrderOfSelectedItems() {
+        return orderOfSelectedItems;
     }
 
-    public OrderImpl getOrder() {
-        return order;
+    public void setOrderOfSelectedItems(Map<Merchandise, Float> orderOfSelectedItems) {
+        this.orderOfSelectedItems = orderOfSelectedItems;
     }
 
-    public void setOrder(OrderImpl order) {
-        this.order = order;
+    public float getFinal_amount_to_pay() {
+        return final_amount_to_pay;
     }
 
-    public CashRegisterImpl getCashRegister() {
-        return cashRegister;
+    public void setFinal_amount_to_pay(float final_amount_to_pay) {
+        this.final_amount_to_pay = final_amount_to_pay;
     }
 
-    public void setCashRegister(CashRegisterImpl cashRegister) {
-        this.cashRegister = cashRegister;
+    public float getFinal_amount_tax_to_pay() {
+        return final_amount_tax_to_pay;
+    }
+
+    public void setFinal_amount_tax_to_pay(float final_amount_tax_to_pay) {
+        this.final_amount_tax_to_pay = final_amount_tax_to_pay;
     }
 
     @Override
     public String toString() {
         return "Receipt{" +
-                "order=" + order +
-                ", cashRegister=" + cashRegister +
+                "orderOfSelectedItems=" + orderOfSelectedItems +
+                ", final_amount_to_pay=" + final_amount_to_pay +
+                ", final_amount_tax_to_pay=" + final_amount_tax_to_pay +
                 '}';
     }
-    //TODO modify the string print out to fit the output format required
+
+    //TODO modify the string print out to fit the receipt output format required
 
 }

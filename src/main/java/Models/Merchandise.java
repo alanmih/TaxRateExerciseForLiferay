@@ -2,16 +2,15 @@ package Models;
 
 import java.util.Arrays;
 
-enum MerchandiseCategory {
-    food, book, medicine, others
-}
-
-enum UnitPackage {
-    generic, bar, box, bottle, packet
-    //For the goods which don't have a unit name such as book, please use "generic"
-}
-
 public class Merchandise {
+    private enum MerchandiseCategory {
+        food, book, medicine, others
+    }
+
+    private enum UnitPackage {
+        generic, bar, box, bottle, packet
+        //For the goods which don't have a unit name such as book, please use "generic"
+    }
 
     int id;
 
@@ -34,7 +33,7 @@ public class Merchandise {
         this.id = id;
         this.name = name;
 
-        if (Arrays.asList(UnitPackage.values()).contains(unitPackage)) {
+        if (Arrays.asList(UnitPackage.values()).contains(UnitPackage.valueOf(unitPackage))) {
             this.unitPackage = UnitPackage.valueOf(unitPackage);
         } else {
             this.unitPackage = UnitPackage.generic;
@@ -43,7 +42,7 @@ public class Merchandise {
 
         this.unitPrice = unitPrice;
 
-        if(Arrays.asList(MerchandiseCategory.values()).contains(merchandiseCategory)){
+        if(Arrays.asList(MerchandiseCategory.values()).contains(MerchandiseCategory.valueOf(merchandiseCategory))){
             this.merchandiseCategory = MerchandiseCategory.valueOf(merchandiseCategory);
         }else{
             this.merchandiseCategory = MerchandiseCategory.others;
@@ -75,7 +74,7 @@ public class Merchandise {
 
     public void setUnitPackage(String unitPackage) {
 
-        if (Arrays.asList(UnitPackage.values()).contains(unitPackage)) {
+        if (Arrays.asList(UnitPackage.values()).contains(UnitPackage.valueOf(unitPackage))) {
             this.unitPackage = UnitPackage.valueOf(unitPackage);
         } else {
             this.unitPackage = UnitPackage.generic;
@@ -97,7 +96,7 @@ public class Merchandise {
 
     public void setMerchandiseCategory(String merchandiseCategory) {
 
-        if(Arrays.asList(MerchandiseCategory.values()).contains(merchandiseCategory)){
+        if(Arrays.asList(MerchandiseCategory.values()).contains(MerchandiseCategory.valueOf(merchandiseCategory))){
             this.merchandiseCategory = MerchandiseCategory.valueOf(merchandiseCategory);
         }else{
             this.merchandiseCategory = MerchandiseCategory.others;
