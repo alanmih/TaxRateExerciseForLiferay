@@ -25,9 +25,9 @@ public class CashRegisterImplTest {
     public void getMerchandiseTaxAmount() {
         CashRegisterImpl cashRegister = new CashRegisterImpl();
 
-        Merchandise merchandise_01 = new Merchandise(1, "imported book", "book", "generic", 20.5f, true);
-        Merchandise merchandise_02 = new Merchandise(2, "internal book", "book", "generic", 22.3f, false);
-        Merchandise merchandise_03 = new Merchandise(3, "good paper", "sheet", "", 0.5f, true);
+        Merchandise merchandise_01 = new Merchandise(1, "JUnitTest_imported book", "book", "generic", 20.5f, true);
+        Merchandise merchandise_02 = new Merchandise(2, "JUnitTest_internal book", "book", "generic", 22.3f, false);
+        Merchandise merchandise_03 = new Merchandise(3, "JUnitTest_good paper", "sheet", "", 0.5f, true);
 
         Float basicSalesTaxRate = 0.1f;
         Float importSalesTaxRate = 0.05f;

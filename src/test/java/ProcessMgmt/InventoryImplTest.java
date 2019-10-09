@@ -9,7 +9,7 @@ public class InventoryImplTest {
 
     @Test
     public void consumeMerchandiseInStorage() {
-        Merchandise merchandise_01 = new Merchandise(1, "imported book", "book", "generic", 20.5f, true);
+        Merchandise merchandise_01 = new Merchandise(1, "JUnitTest_imported book", "book", "generic", 20.5f, true);
 
         InventoryImpl inventory = new InventoryImpl();
 
@@ -22,7 +22,7 @@ public class InventoryImplTest {
 
     @Test
     public void addMerchandiseInStorage() {
-        Merchandise merchandise_01 = new Merchandise(1, "imported book", "book", "generic", 20.5f, true);
+        Merchandise merchandise_01 = new Merchandise(1, "JUnitTest_imported book", "book", "generic", 20.5f, true);
 
         InventoryImpl inventory = new InventoryImpl();
 
