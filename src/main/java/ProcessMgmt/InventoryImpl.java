@@ -57,11 +57,6 @@ public class InventoryImpl implements Inventory {
         return inventory;
     }
 
-    public void setInventory(Map<Merchandise, Integer> inventory) {
-        this.inventory = inventory;
-        //TODO Check if setInventory here is necessary
-    }
-
     @Override
     public synchronized boolean consumeMerchandiseInStorage(Merchandise merchandise, int qty) {
         if (inventory.containsKey(merchandise) && qty > 0 && inventory.get(merchandise) >= qty) {
