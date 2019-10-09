@@ -2,28 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="28a2b450-e330-455d-a213-b18957364755" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SalesTaxSystemRecords.log" beforeDir="false" afterPath="$PROJECT_DIR$/SalesTaxSystemRecords.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/inventory.csv" beforeDir="false" afterPath="$PROJECT_DIR$/inventory.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Models/Merchandise.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Merchandise.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Models/Receipt.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Models/Receipt.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProcessMgmt/CashRegister.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProcessMgmt/CashRegister.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ProcessMgmt/CashRegisterImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProcessMgmt/CashRegisterImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProcessMgmt/InventoryImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProcessMgmt/InventoryImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProcessMgmt/TaxRates.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProcessMgmt/TaxRates.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ProcessMgmt/TaxRatesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ProcessMgmt/TaxRatesImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SalesTax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/SalesTax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Merchandise$MerchandiseCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Merchandise$MerchandiseCategory.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Merchandise$UnitPackage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Merchandise$UnitPackage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Merchandise.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Merchandise.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Models/Receipt.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Models/Receipt.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ProcessMgmt/CashRegister.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProcessMgmt/CashRegister.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ProcessMgmt/CashRegisterImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProcessMgmt/CashRegisterImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ProcessMgmt/InventoryImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProcessMgmt/InventoryImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ProcessMgmt/TaxRates.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProcessMgmt/TaxRates.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ProcessMgmt/TaxRatesImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ProcessMgmt/TaxRatesImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/SalesTax.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/SalesTax.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -38,14 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/SalesTax.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/Models/Receipt.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="59" lean-forward="true" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="215">
+              <caret line="45" column="55" lean-forward="true" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -58,8 +38,32 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ProcessMgmt/InventoryImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-995">
-              <caret line="71" column="39" lean-forward="true" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
+            <state relative-caret-position="59">
+              <caret line="169" column="112" selection-start-line="169" selection-start-column="112" selection-end-line="169" selection-end-column="112" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ProcessMgmt/CashRegisterImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="336">
+              <caret line="70" column="48" lean-forward="true" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/SalesTax.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="184">
+              <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -85,6 +89,8 @@
       <find>er</find>
       <find>logg</find>
       <find>logger</find>
+      <find>Entered amount_tax_to_pay_to_add equal or less than 0</find>
+      <find>builder</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -110,7 +116,6 @@
         <option value="$PROJECT_DIR$/sampleTaxRateFileValues.txt" />
         <option value="$PROJECT_DIR$/taxRate.csv" />
         <option value="$PROJECT_DIR$/sampleInventoryFileValues.txt" />
-        <option value="$PROJECT_DIR$/src/main/java/Models/Receipt.java" />
         <option value="$PROJECT_DIR$/src/main/java/ProcessMgmt/TaxRates.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
@@ -118,8 +123,9 @@
         <option value="$PROJECT_DIR$/src/main/java/ProcessMgmt/TaxRatesImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ProcessMgmt/CashRegister.java" />
         <option value="$PROJECT_DIR$/inventory.csv" />
-        <option value="$PROJECT_DIR$/src/main/java/ProcessMgmt/CashRegisterImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/ProcessMgmt/InventoryImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ProcessMgmt/CashRegisterImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/Models/Receipt.java" />
         <option value="$PROJECT_DIR$/src/main/java/SalesTax.java" />
       </list>
     </option>
@@ -207,7 +213,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570595869725" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1570598862344" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.31433824" />
@@ -271,7 +277,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.19063005" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49863014" visible="true" weight="0.17770597" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -281,8 +287,8 @@
       <window_info id="Favorites" order="7" sideWeight="0.50136983" side_tool="true" weight="0.26898223" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49919224" weight="0.32876712" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.26164383" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49919224" weight="0.269863" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.26438355" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49919224" weight="0.64657533" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
@@ -383,27 +389,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Models/Receipt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ProcessMgmt/CashRegister.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
           <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ProcessMgmt/CashRegisterImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="20" lean-forward="true" selection-start-column="20" selection-end-column="20" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -454,10 +443,27 @@
     <entry file="file://$PROJECT_DIR$/SalesTaxSystemRecords.log">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ProcessMgmt/CashRegisterImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="70" column="48" lean-forward="true" selection-start-line="70" selection-start-column="48" selection-end-line="70" selection-end-column="48" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Models/Receipt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="45" column="55" lean-forward="true" selection-start-line="45" selection-start-column="55" selection-end-line="45" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ProcessMgmt/InventoryImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-995">
-          <caret line="71" column="39" lean-forward="true" selection-start-line="71" selection-start-column="39" selection-end-line="71" selection-end-column="39" />
+        <state relative-caret-position="59">
+          <caret line="169" column="112" selection-start-line="169" selection-start-column="112" selection-end-line="169" selection-end-column="112" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -466,8 +472,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SalesTax.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="59" lean-forward="true" selection-start-line="19" selection-start-column="59" selection-end-line="19" selection-end-column="59" />
+        <state relative-caret-position="184">
+          <caret line="20" column="58" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

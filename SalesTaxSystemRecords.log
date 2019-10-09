@@ -7,3 +7,15 @@
 [19/10/09 12:43:17][WARN][ProcessMgmt.InventoryImpl-87] Other exception happened when trying to consume %d units of merchandise: %sMerchandise{id=3, name='chocolate bar', merchandiseCategory=food, unitPackage=bar, unitPrice=0.85, imported=false}
 [19/10/09 12:45:01][WARN][ProcessMgmt.InventoryImpl-87] Other exception happened when trying to consume %d units of merchandise: %sMerchandise{id=1, name='book', merchandiseCategory=book, unitPackage=generic, unitPrice=12.49, imported=false}
 [19/10/09 12:49:57][WARN][ProcessMgmt.InventoryImpl-87] Other exception happened when trying to consume %d units of merchandise: %sMerchandise{id=1, name='book', merchandiseCategory=book, unitPackage=generic, unitPrice=12.49, imported=false}
+[19/10/09 14:03:46][INFO][SalesTax-25] Started the App
+[19/10/09 14:03:57][INFO][SalesTax-25] Started the App
+[19/10/09 14:04:51][WARN][ProcessMgmt.CashRegisterImpl-53] Entered amount_tax_to_pay_to_add equal or less than 0
+[19/10/09 14:04:51][WARN][ProcessMgmt.CashRegisterImpl-53] Entered amount_tax_to_pay_to_add equal or less than 0
+[19/10/09 14:09:22][INFO][SalesTax-25] Started the App
+[19/10/09 14:10:32][INFO][SalesTax-25] Started the App
+[19/10/09 14:11:33][INFO][SalesTax-25] Started the App
+[19/10/09 14:11:42][INFO][SalesTax-25] Started the App
+[19/10/09 14:19:36][INFO][SalesTax-25] Started the App
+[19/10/09 14:20:52][INFO][SalesTax-25] Started the App
+[19/10/09 14:25:58][INFO][SalesTax-26] Started the App
+[19/10/09 14:26:32][INFO][SalesTax-26] Started the App

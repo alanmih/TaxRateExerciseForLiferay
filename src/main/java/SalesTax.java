@@ -5,6 +5,7 @@ import ProcessMgmt.TaxRatesImpl;
 import ProcessMgmt.InventoryImpl;
 import org.apache.log4j.Logger;
 
+import java.io.IOException;
 import java.util.InputMismatchException;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -27,66 +28,42 @@ public class SalesTax {
         SalesTax salesTax = new SalesTax();
 
         Receipt receipt = salesTax.generateReceipt(salesTax.getUserSelectedItems());
-        //TODO calculate the amount to pay and print out the receipt based on userSelectedItemsAndQty
 
-
-//        TaxRatesImpl taxRates = new TaxRatesImpl();
-//
-//        System.out.println("Tax Rates from the file: " + taxRates);
-//        System.out.println("===\n");
-//
-//
-//        InventoryImpl inventory = new InventoryImpl();
-//
-//        Map<Merchandise, Integer> tempInventory = inventory.getInventory();
-//
-//        CashRegisterImpl cashRegister = new CashRegisterImpl();
-//
-//
-//        Merchandise tempMerchandise = new Merchandise();
-
-
-//        System.out.println("Print out the inventory obj before the update: ");
-
-//        for (Map.Entry<Merchandise, Integer> entry : tempInventory.entrySet()) {
-//            if ("book".equals(entry.getKey().getName())) {
-//                tempMerchandise = entry.getKey();
-//            }
-//
-//            float merchandisePricePlusTax = entry.getKey().getUnitPrice() + cashRegister.getMerchandiseTaxAmount(entry.getKey(), taxRates.getBasicSalesTaxRate(), taxRates.getImportSalesTaxRate());
-//
-//            System.out.println("The merchandise: " + entry.getKey() + "; Quantity: " + entry.getValue() +
-//                    "; unitPricePlusTaxAmount: " + merchandisePricePlusTax);
-//
-//        }
-
-
-//
-//        System.out.println("===\n\n");
-//
-//        tempInventory.put(tempMerchandise, 29);
-//
-//        try {
-//            inventory.updateInventoryFile(tempInventory);
-//            tempInventory = inventory.readInventoryFile();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        System.out.println("Print out the inventory obj after the update: ");
-//
-//
-//        for (Map.Entry<Merchandise, Integer> entry : tempInventory.entrySet()) {
-//            System.out.println("The merchandise: " + entry.getKey() + "; Quantity: " + entry.getValue());
-//        }
-
+        System.out.println("=== Please refer to your bill details below: ===\n");
+        System.out.println(receipt);
 
     }
 
-    private Receipt generateReceipt(Map<Merchandise, Integer> userSelectedItemsAndQty){
 
+    private Receipt generateReceipt(Map<Merchandise, Integer> userSelectedItemsAndQty) {
 
-        return null;
+        try {
+            inventory.updateInventoryFile(inventory.getInventory());
+
+        } catch (IOException e) {
+            logger.error(e.toString());
+        }
+
+        Receipt receipt = new Receipt();
+
+        for (Map.Entry<Merchandise, Integer> entry : userSelectedItemsAndQty.entrySet()) {
+            Merchandise currentMerchandise = entry.getKey();
+            int selectedQty = entry.getValue();
+
+            float currentMerchandiseUnitPriceTax = cashRegister.getMerchandiseTaxAmount(currentMerchandise, taxRates.getBasicSalesTaxRate(), taxRates.getImportSalesTaxRate());
+
+            currentMerchandise.setUnitPriceTax(currentMerchandiseUnitPriceTax);
+            //Update the unitPirceTax in each Merchandise object
+
+            cashRegister.addAmountToPay((currentMerchandise.getUnitPrice() + currentMerchandise.getUnitPriceTax()) * selectedQty);
+            cashRegister.addAmountTaxToPay(currentMerchandise.getUnitPriceTax() * selectedQty);
+        }
+
+        receipt.setOrderOfSelectedItems(userSelectedItemsAndQty);
+        receipt.setFinal_amount_to_pay(cashRegister.getAmountToPay());
+        receipt.setFinal_amount_tax_to_pay(cashRegister.getAmountTaxToPay());
+
+        return receipt;
     }
 
 

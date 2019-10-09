@@ -12,7 +12,7 @@ public class CashRegisterImpl implements CashRegister {
 
     private float amount_tax_to_pay = 0.0f;
 
-    final private String cashRegisterErrorMsg = "%f is not allowed, please enter a value which is greater than 0 ";
+    final private String cashRegisterErrorMsg = "%f is not allowed, please enter a value again ";
 
     @Override
     public float getAmountToPay() {
@@ -46,11 +46,11 @@ public class CashRegisterImpl implements CashRegister {
 
     @Override
     public void addAmountTaxToPay(float amount_tax_to_pay_to_add) {
-        if (amount_tax_to_pay_to_add > 0) {
+        if (amount_tax_to_pay_to_add >= 0) {
             this.amount_tax_to_pay += amount_tax_to_pay_to_add;
         } else {
             System.out.printf(cashRegisterErrorMsg + "\n", amount_tax_to_pay_to_add);
-            logger.warn("Entered amount_tax_to_pay_to_add equal or less than 0");
+            logger.warn("Entered amount_tax_to_pay_to_add less than 0");
 
         }
 
