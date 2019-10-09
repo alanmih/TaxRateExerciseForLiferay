@@ -14,15 +14,22 @@ public class CashRegisterImpl implements CashRegister {
 
     final private String cashRegisterErrorMsg = "%f is not allowed, please enter a value again ";
 
-    @Override
     public float getAmountToPay() {
         return this.amount_to_pay;
     }
 
-    @Override
     public void setAmountToPay(float amount_to_pay) {
         this.amount_to_pay = amount_to_pay;
     }
+
+    public float getAmountTaxToPay() {
+        return this.amount_tax_to_pay;
+    }
+
+    public void setAmountTaxToPay(float amount_tax_to_pay) {
+        this.amount_tax_to_pay = amount_tax_to_pay;
+    }
+
 
     @Override
     public void addAmountToPay(float amount_to_pay_to_add) {
@@ -32,16 +39,6 @@ public class CashRegisterImpl implements CashRegister {
             System.out.printf(cashRegisterErrorMsg + "\n", amount_to_pay_to_add);
             logger.warn("Entered amount_to_pay_to_add equal or less than 0");
         }
-    }
-
-    @Override
-    public float getAmountTaxToPay() {
-        return this.amount_tax_to_pay;
-    }
-
-    @Override
-    public void setAmountTaxToPay(float amount_tax_to_pay) {
-        this.amount_tax_to_pay = amount_tax_to_pay;
     }
 
     @Override
