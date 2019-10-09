@@ -41,20 +41,41 @@ public class Merchandise {
         this.id = id;
         this.name = name;
 
-        if (Arrays.asList(UnitPackage.values()).contains(UnitPackage.valueOf(unitPackage))) {
+        boolean unitPackageCheck;
+
+        try {
+            unitPackageCheck = Arrays.asList(UnitPackage.values()).contains(UnitPackage.valueOf(unitPackage));
+
+        } catch (IllegalArgumentException e) {
+            logger.warn(e.toString());
+            unitPackageCheck = false;
+        }
+
+        if (unitPackageCheck) {
             this.unitPackage = UnitPackage.valueOf(unitPackage);
         } else {
             this.unitPackage = UnitPackage.generic;
-            logger.info("Merchandise - id: " + id + " ; Name: " + name + ", unitPackage: " +  unitPackage + " is not defined in the system and was casted to \'generic\'");
+            logger.info("Merchandise - id: " + id + " ; Name: " + name + ", unitPackage: " + unitPackage + " is not defined in the system and was casted to \'generic\'");
         }
 
         this.unitPrice = unitPrice;
 
-        if(Arrays.asList(MerchandiseCategory.values()).contains(MerchandiseCategory.valueOf(merchandiseCategory))){
+
+        boolean merchandiseCategoryCheck;
+
+        try {
+            merchandiseCategoryCheck = Arrays.asList(MerchandiseCategory.values()).contains(MerchandiseCategory.valueOf(merchandiseCategory));
+
+        } catch (IllegalArgumentException e) {
+            logger.warn(e.toString());
+            merchandiseCategoryCheck = false;
+        }
+
+        if (merchandiseCategoryCheck) {
             this.merchandiseCategory = MerchandiseCategory.valueOf(merchandiseCategory);
-        }else{
+        } else {
             this.merchandiseCategory = MerchandiseCategory.others;
-            logger.info("Merchandise - id: " + id + " ; Name: " + name + ", merchandiseCategory: " +  merchandiseCategory + " is not defined in the system and was casted to \'others\'");
+            logger.info("Merchandise - id: " + id + " ; Name: " + name + ", merchandiseCategory: " + merchandiseCategory + " is not defined in the system and was casted to \'others\'");
 
         }
 
@@ -87,7 +108,7 @@ public class Merchandise {
             this.unitPackage = UnitPackage.valueOf(unitPackage);
         } else {
             this.unitPackage = UnitPackage.generic;
-            logger.info(" unitPackage: " +  unitPackage + " is not defined in the system and was casted to \'generic\'");
+            logger.info(" unitPackage: " + unitPackage + " is not defined in the system and was casted to \'generic\'");
         }
     }
 
@@ -113,11 +134,11 @@ public class Merchandise {
 
     public void setMerchandiseCategory(String merchandiseCategory) {
 
-        if(Arrays.asList(MerchandiseCategory.values()).contains(MerchandiseCategory.valueOf(merchandiseCategory))){
+        if (Arrays.asList(MerchandiseCategory.values()).contains(MerchandiseCategory.valueOf(merchandiseCategory))) {
             this.merchandiseCategory = MerchandiseCategory.valueOf(merchandiseCategory);
-        }else{
+        } else {
             this.merchandiseCategory = MerchandiseCategory.others;
-            logger.info("merchandiseCategory: " +  merchandiseCategory + " is not defined in the system and was casted to \'others\'");
+            logger.info("merchandiseCategory: " + merchandiseCategory + " is not defined in the system and was casted to \'others\'");
 
         }
     }
