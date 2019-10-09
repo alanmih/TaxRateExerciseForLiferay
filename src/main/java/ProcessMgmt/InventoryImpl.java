@@ -1,6 +1,7 @@
 package ProcessMgmt;
 
 import Models.Merchandise;
+import org.apache.log4j.Logger;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,6 +12,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class InventoryImpl implements Inventory {
+
+    public final Logger logger = Logger.getLogger("Global");
+
 
     private static Map<Merchandise, Integer> inventory;
     //Make it private to ensure only the initiated inventory obj can access it and all inventory objs share this inventory variable
@@ -42,7 +46,7 @@ public class InventoryImpl implements Inventory {
 
             } catch (IOException e) {
                 e.printStackTrace();
-                //Logging
+                logger.error(e.toString());
             }
             //Automatically read the inventory file when inventory obj is initiated for the first time
         }
@@ -59,28 +63,28 @@ public class InventoryImpl implements Inventory {
 
     @Override
     public synchronized boolean consumeMerchandiseInStorage(Merchandise merchandise, int qty) {
-        if (inventory.containsKey(merchandise) && qty > 0 && inventory.get(merchandise) < qty) {
+        if (inventory.containsKey(merchandise) && qty > 0 && inventory.get(merchandise) >= qty) {
             inventory.put(merchandise, inventory.get(merchandise) - qty);
             return true;
 
         } else if (inventory.containsKey(merchandise) == false) {
             System.out.printf(merchandiseNotInInventoryMsg, merchandise);
-            //Logging
+            logger.warn("Can not consume the merchandise because it is not in the inventory: " + merchandise);
             return false;
 
         } else if (qty <= 0) {
             System.out.printf(qtyLessThanZeroMsg, qty);
-            //Logging
+            logger.warn("Entered a quantity equal or less than 0 to consumed: " + qty + " for the merchandise: " + merchandise);
             return false;
 
         } else if (inventory.get(merchandise) < qty) {
             System.out.printf(storageNotEnoughMsg, inventory.get(merchandise), qty);
-            //Logging
+            logger.warn("Entered a quantity: " + qty + " for the merchandise: " + merchandise + ", which is greater than its stock: " + inventory.get(merchandise));
             return false;
 
         } else {
             System.out.printf(otherConsumeMerchandiseExceptionMsg, qty, merchandise);
-            //Logging
+            logger.warn(otherConsumeMerchandiseExceptionMsg + merchandise);
             return false;
         }
 
@@ -95,19 +99,20 @@ public class InventoryImpl implements Inventory {
         } else if (!inventory.containsKey(merchandise) && qty >= 0) {
             inventory.put(merchandise, qty);
             System.out.printf(addNewMerchandiseMsg, merchandise, qty);
-            //Logging
+            logger.warn("Added a new merchandise to stock: " + merchandise + ", quantity: " + qty);
             return true;
 
         } else if (qty < 0) {
             System.out.printf(qtyLessThanZeroMsg, qty);
-            //Logging
+            logger.warn("Entered a quantity equal or less than 0 to added: " + qty + " for the merchandise: " + merchandise);
+            return false;
 
         } else {
             System.out.printf(otherAddMerchandiseExceptionMsg, merchandise);
-            //Logging
+            logger.warn(otherAddMerchandiseExceptionMsg + merchandise);
+            return false;
         }
 
-        return false;
     }
 
     @Override
@@ -151,9 +156,9 @@ public class InventoryImpl implements Inventory {
 
         } else {
             System.out.println(inventoryFileIsEmptyMsg);
-            //Logging
+            logger.fatal(inventoryFileIsEmptyMsg);
 
-            System.exit(0);
+            System.exit(1);
             //If the inventory file is empty, terminate the app and then remind the user to update the inventory.csv and start the app again
         }
 
@@ -191,7 +196,7 @@ public class InventoryImpl implements Inventory {
 
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            //Logging
+            logger.error(e.toString());
         }
     }
 

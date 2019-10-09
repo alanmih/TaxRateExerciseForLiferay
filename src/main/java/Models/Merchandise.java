@@ -1,5 +1,7 @@
 package Models;
 
+import org.apache.log4j.Logger;
+
 import java.util.Arrays;
 
 public class Merchandise {
@@ -12,6 +14,9 @@ public class Merchandise {
         //For the goods which don't have a unit name such as book, please use "generic"
     }
 
+    public final Logger logger = Logger.getLogger("Global");
+
+
     int id;
 
     String name;
@@ -23,6 +28,9 @@ public class Merchandise {
     float unitPrice;
     //If a Merchandise has more than 1 package unit, then it should be treated as different objects here
     //e.g. obj1: name=chocolate, unitPackage=box, unitPrice=10.00; obj2: name=chocolate, unitPackage=bar, unitPrice=0.85
+
+    float unitPriceTax;
+    //It would only be updated when processing the Merchandise obj through CashRegister's methods for receipt print out usage
 
     boolean imported;
 
@@ -37,7 +45,7 @@ public class Merchandise {
             this.unitPackage = UnitPackage.valueOf(unitPackage);
         } else {
             this.unitPackage = UnitPackage.generic;
-            //logging
+            logger.info("Merchandise - id: " + id + " ; Name: " + name + ", unitPackage: " +  unitPackage + " is not defined in the system and was casted to \'generic\'");
         }
 
         this.unitPrice = unitPrice;
@@ -46,7 +54,8 @@ public class Merchandise {
             this.merchandiseCategory = MerchandiseCategory.valueOf(merchandiseCategory);
         }else{
             this.merchandiseCategory = MerchandiseCategory.others;
-            //logging
+            logger.info("Merchandise - id: " + id + " ; Name: " + name + ", merchandiseCategory: " +  merchandiseCategory + " is not defined in the system and was casted to \'others\'");
+
         }
 
         this.imported = imported;
@@ -78,7 +87,7 @@ public class Merchandise {
             this.unitPackage = UnitPackage.valueOf(unitPackage);
         } else {
             this.unitPackage = UnitPackage.generic;
-            //logging
+            logger.info(" unitPackage: " +  unitPackage + " is not defined in the system and was casted to \'generic\'");
         }
     }
 
@@ -88,6 +97,14 @@ public class Merchandise {
 
     public void setUnitPrice(float unitPrice) {
         this.unitPrice = unitPrice;
+    }
+
+    public float getUnitPriceTax() {
+        return unitPriceTax;
+    }
+
+    public void setUnitPriceTax(float unitPriceTax) {
+        this.unitPriceTax = unitPriceTax;
     }
 
     public String getMerchandiseCategory() {
@@ -100,7 +117,8 @@ public class Merchandise {
             this.merchandiseCategory = MerchandiseCategory.valueOf(merchandiseCategory);
         }else{
             this.merchandiseCategory = MerchandiseCategory.others;
-            //logging
+            logger.info("merchandiseCategory: " +  merchandiseCategory + " is not defined in the system and was casted to \'others\'");
+
         }
     }
 

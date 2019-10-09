@@ -1,8 +1,12 @@
 package ProcessMgmt;
 
 import Models.Merchandise;
+import org.apache.log4j.Logger;
 
 public class CashRegisterImpl implements CashRegister {
+
+    public final Logger logger = Logger.getLogger("Global");
+
 
     private float amount_to_pay = 0.0f;
 
@@ -24,9 +28,9 @@ public class CashRegisterImpl implements CashRegister {
     public void addAmountToPay(float amount_to_pay_to_add) {
         if (amount_to_pay_to_add > 0) {
             this.amount_to_pay += amount_to_pay_to_add;
-        }else{
-            System.out.printf(cashRegisterErrorMsg+"\n", amount_to_pay_to_add);
-            //logging
+        } else {
+            System.out.printf(cashRegisterErrorMsg + "\n", amount_to_pay_to_add);
+            logger.warn("Entered amount_to_pay_to_add equal or less than 0");
         }
     }
 
@@ -42,20 +46,29 @@ public class CashRegisterImpl implements CashRegister {
 
     @Override
     public void addAmountTaxToPay(float amount_tax_to_pay_to_add) {
-        if(amount_tax_to_pay_to_add > 0){
+        if (amount_tax_to_pay_to_add > 0) {
             this.amount_tax_to_pay += amount_tax_to_pay_to_add;
-        }else{
-            System.out.printf(cashRegisterErrorMsg+"\n", amount_tax_to_pay_to_add);
-            //logging
+        } else {
+            System.out.printf(cashRegisterErrorMsg + "\n", amount_tax_to_pay_to_add);
+            logger.warn("Entered amount_tax_to_pay_to_add equal or less than 0");
+
         }
 
     }
 
     @Override
-    public Float calculateMerchandisePriceWithTax(Merchandise merchandise) {
+    public Float getMerchandiseTaxAmount(Merchandise merchandise, Float basicSalesTaxRate, Float importSalesTaxRate) {
 
+        String merchandiseCategory = merchandise.getMerchandiseCategory();
+        float merchandiseTaxRate = ((merchandiseCategory == "others") ? basicSalesTaxRate : 0) + ((merchandise.isImported() == true) ? importSalesTaxRate : 0);
 
-        return null;
+        return roundToNearest(merchandise.getUnitPrice() * merchandiseTaxRate);
+        //Calculate a merchandise's amount to paid plus tax and return
+    }
+
+    private Float roundToNearest(float taxAmount) {
+        return (float) Math.ceil(taxAmount * 20) / 20;
+        // np/100 rounded up to the nearest 0.05
     }
 
 }

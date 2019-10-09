@@ -1,5 +1,8 @@
 package ProcessMgmt;
 
+
+import org.apache.log4j.Logger;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
@@ -7,6 +10,9 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class TaxRatesImpl implements TaxRates {
+
+    public final Logger logger = Logger.getLogger("Global");
+
 
     private static Float basicSalesTaxRate;
     private static Float importSalesTaxRate;
@@ -40,21 +46,23 @@ public class TaxRatesImpl implements TaxRates {
 
             } catch (IOException e) {
                 e.printStackTrace();
-                //Logging
+                logger.error(e.toString());
             }
         }
     }
 
+    @Override
     public float getBasicSalesTaxRate() {
         return basicSalesTaxRate;
     }
 
-    public void setBasicSalesTaxRate(float basicSalesTaxRate) {
-        this.basicSalesTaxRate = basicSalesTaxRate;
-    }
-
+    @Override
     public float getImportSalesTaxRate() {
         return importSalesTaxRate;
+    }
+
+    public void setBasicSalesTaxRate(float basicSalesTaxRate) {
+        this.basicSalesTaxRate = basicSalesTaxRate;
     }
 
     public void setImportSalesTaxRate(float importSalesTaxRate) {
@@ -69,7 +77,7 @@ public class TaxRatesImpl implements TaxRates {
 
         if (taxRateFile.createNewFile()) {
             System.out.printf(createNewFileMsg, taxRateFileDir);
-            //Logging
+            logger.warn("Due to the Tax Rate file is not exist, created a new file: " + taxRateFileDir);
 
         } else {
             System.out.printf(fileAlreadyExitMsg, taxRateFileDir);
@@ -97,15 +105,15 @@ public class TaxRatesImpl implements TaxRates {
 
                 } else {
                     System.out.printf(unknownTaxRateNameMsg, count);
-                    //Logging
+                    logger.warn(unknownTaxRateNameMsg);
                 }
             }
 
         } else {
             System.out.println(taxRateFileIsEmptyMsg);
-            //Logging
+            logger.fatal(taxRateFileIsEmptyMsg);
 
-            System.exit(0);
+            System.exit(1);
             //If the taxRate file is empty, terminate the app and then remind the user to update the taxRate.csv and start the app again
         }
 

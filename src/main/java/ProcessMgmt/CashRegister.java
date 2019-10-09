@@ -2,6 +2,8 @@ package ProcessMgmt;
 
 import Models.Merchandise;
 
+import java.util.Map;
+
 public interface CashRegister {
 
     float getAmountToPay();
@@ -16,6 +18,6 @@ public interface CashRegister {
 
     void addAmountTaxToPay(float amount_to_pay_to_add);
 
-    Float calculateMerchandisePriceWithTax(Merchandise merchandise);
+    Float getMerchandiseTaxAmount(Merchandise merchandise, Float basicSalesTaxRate, Float importSalesTaxRate);
 
 }
