@@ -70,7 +70,7 @@ public class TaxRatesImpl implements TaxRates {
     }
 
     @Override
-    public Map<String, Float> readTaxRateFile() throws IOException {
+    public synchronized Map<String, Float> readTaxRateFile() throws IOException {
 
         String taxRateFileDir = getTaxRateFileDirectory();
         File taxRateFile = new File(taxRateFileDir);
