@@ -22,7 +22,7 @@ public class InventoryImpl implements Inventory {
 
     private final String merchandiseNotInInventoryMsg = "Merchandise %s is not in the inventory";
     private final String qtyLessThanZeroMsg = "Quantity (value: %d) should not less than 0, please enter again";
-    private final String storageNotEnoughMsg = "Quanity in storage: %d, is less than %d units to be consumed";
+    private final String storageNotEnoughMsg = "Quantity in storage: %d, is less than %d units to be consumed";
     private final String otherConsumeMerchandiseExceptionMsg = "Other exception happened when trying to consume %d units of merchandise: %s";
     private final String addNewMerchandiseMsg = "Added a new merchandise: %s; quantity: %d";
     private final String otherAddMerchandiseExceptionMsg = "Other exception happened when trying to add the merchandise to the inventory: %s";
@@ -52,6 +52,7 @@ public class InventoryImpl implements Inventory {
         }
     }
 
+    @Override
     public Map<Merchandise, Integer> getInventory() {
         return inventory;
     }
@@ -99,7 +100,7 @@ public class InventoryImpl implements Inventory {
         } else if (!inventory.containsKey(merchandise) && qty >= 0) {
             inventory.put(merchandise, qty);
             System.out.printf(addNewMerchandiseMsg, merchandise, qty);
-            logger.warn("Added a new merchandise to stock: " + merchandise + ", quantity: " + qty);
+            logger.info("Added a new merchandise to stock: " + merchandise + ", quantity: " + qty);
             return true;
 
         } else if (qty < 0) {
